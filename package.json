@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest ",
+    "test": "dotenv -e .env.local npx jest ",
     "start": "nodemon ./src/index.ts"
   },
   "keywords": [],
