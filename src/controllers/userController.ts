@@ -29,6 +29,9 @@ class UserController {
       res.status(400).json({ message: "bad body" });
       return;
     }
+    if (data.password) {
+      data.password = await bcrypt.hash(data.password, 10);
+    }
     const user: User = await prisma.users.update({
       where: { id: parseInt(id) },
       data: data,
